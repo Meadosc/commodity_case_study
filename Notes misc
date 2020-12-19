@@ -1,0 +1,9 @@
+Case Study Misc:
+
+In the 'about' for the data, the researchers list the quality of the data sources, with three ratings: 'Excellent', 'Good', and 'Poor'. The majority of sources are rated as 'Good', with only 4 sources being rated as 'Excellent', and those 4 being the authors themselves.
+
+Wheat wasn't sorted by year! tricky. Also, it's from many, many locations. So I'll need to choose one location, likely. Note, each location has a different set of years. This is obvious, but I didn't notice it at first, which I should have given that there's thousands of entries.
+
+The Wheat dataset is missing some years. yay.
+
+Cloth in Paris is about 2 entries.

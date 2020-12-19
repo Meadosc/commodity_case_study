@@ -1,0 +1,42 @@
+Case Study:
+	Good values that vary(by local currency vs silver) by region
+		above but changed over time
+	Do a lot of range studies. In one year, what is the most inflated, and where, and how does that change over the years
+
+	I'm not sure I understand why the price in silver is assumed to be so stable.
+
+
+Ideas:
+	Wheat is the most common, and it is a basic necessity. Can I use that as a baseline to normalize other prices compared to economic influences? Can I track the price of wheat to connect to historic events? How does it compare to luxury goods?
+		- And are any of those interesting, or are those basic bitch questions?
+		- Baseline commodity is silver, thus the silver standard.
+
+
+	There are Nails. That could be used as a measure for infrastructure expansion, and maybe growth? How would that correlate to population growth, and can I use an outside dataset like that?
+		- probably no outside data
+
+	Gold is in there. Maybe compare gold to silver. But that is historically an incredibly stable ratio. It's why those two are the 'standard'
+
+	Bark is in there. Weird. What is bark used for?
+		- It's used for a bunch of things apparently. Probably not a good commodity to try to draw conclusions about.
+
+	There's a bunch of different original currencies, so I could try to compare their relative value based on the ratio to silver, and then look at how that changes over time. I could average the different commodities when calculating. And I could take the average and then see which commodities were abnormally valued in their original currency to see what goods were of particular importance in different states. However that's a little off of what this dataset is useful for, so maybe I wouldn't have enough data.
+
+	Well. Here's the super obvious one. Plot all the prices and look for any weird spikes or dips.
+
+	Maybe find which has the highest instance of rate of change, or the most stable good over time? These are all just facts, so an interpretation has to come later. But you could rate them on stability and see which goods are stable and which aren't.
+
+	Cloth is the most valuable commodity! in 1567 it's value was massive. That might be worth investigating.
+
+	Why did wheat go up in price so drastically? Shouldn't the industrial revolution have made it cheaper? Or where there less farmers and a higher demand for food goods?
+
+	I could use graph spikes to see how the industrial revolution spread geographically. Seems straightforward, but pretty useful.
+
+	Gold Prices in san Frnacisco dropped dramatically in ~1855. I guess that's due to the gold rush. Cool.
+
+	Gold in Krakow has duplicate years. It lloks like there are multiple varieties priced in multiple currencies. Could be worth investigating.
+
+	Salt had a weird dip in ~1750 in vienna, anda spike in 1640
+
+	How did he gold rush affect prices in San Francisco?
+
