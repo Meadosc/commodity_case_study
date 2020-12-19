@@ -8,7 +8,7 @@ Case Study:
 
 Ideas:
 	Wheat is the most common, and it is a basic necessity. Can I use that as a baseline to normalize other prices compared to economic influences? Can I track the price of wheat to connect to historic events? How does it compare to luxury goods?
-		- And are any of those interesting, or are those basic bitch questions?
+		- And are any of those interesting, or are those basic questions?
 		- Baseline commodity is silver, thus the silver standard.
 
 
