@@ -7,33 +7,30 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 
-def comm_loc_df(comm, loc, vari=None):
+def loc_comm_df(loc, comm, vari=None):
     # Get a dataframe by commodity and location, sorted by year
-    # Note: this function is space inefficient. Room for improvement.
     
     # raw data
     df_raw = pd.read_csv("data_raw/all_commodities.csv")
 
-    # filter by commodity
-    df_comm = df_raw.loc[df_raw["Commodity"] == str(comm)]
-    assert(not df_comm.empty), f"The comm value returned nothing, try {df_raw['Commodity'].unique()}"
-
     # filter by location
-    df_comm_loc = df_comm.loc[df_comm["Location"] == loc]
-    assert(not df_comm_loc.empty), f"The loc value returned nothing, try {df_comm['Location'].unique()}"
+    df = df_raw.loc[df_raw["Location"] == loc]
+    assert(not df.empty), f"The loc value returned nothing, try {df_raw['Location'].unique()}"
+    
+    # filter by commodity
+    df = df.loc[df["Commodity"] == str(comm)]
+    assert(not df.empty), f"The comm value returned nothing, try {df_raw[df_raw['Location'] == loc]['Commodity'].unique()}"
 
     # If vari is specified, sort by variety
     if vari:
-        df_comm_loc_vari = df_comm_loc.loc[df_comm["Variety"] == vari]
-        assert(not df_comm_loc_vari.empty), f"The vari value returned nothing, either remove it or try {df_comm_loc['Variety'].unique()}"
-    else:
-        df_comm_loc_vari = df_comm_loc
+        df = df.loc[df["Variety"] == vari]
+        assert(not df.empty), f"The vari value returned nothing, either remove it or try {(df_raw[(df_raw['Location'] == loc) & (df_raw['Commodity'] == comm)])['Variety'].unique()}"
     
     # sort by year, assert there are no duplicate years
-    df_comm_loc_vari = df_comm_loc_vari.sort_values(by=["Item Year"])
-    assert(len(df_comm_loc_vari) == len(df_comm_loc_vari["Item Year"].unique())), f"There are duplicate years. Here are the varieties: {df_comm_loc_vari['Variety'].unique()}"
+    df = df.sort_values(by=["Item Year"])
+    assert(len(df) == len(df["Item Year"].unique())), f"There are duplicate years. Here are the varieties: {df['Variety'].unique()}"
     
-    return df_comm_loc_vari
+    return df
 
 
 def miss_years(comm_loc_df):
@@ -72,6 +69,6 @@ def df_plot(df_comm_loc):
 
 
 if __name__ == '__main__':
-    df = comm_loc_df("Wheat", "England")
+    df = loc_comm_df("England", "Wheat", vari="asdf")
     #print(miss_years(df))
     fig, ax = df_plot(df)
