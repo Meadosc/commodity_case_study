@@ -12,3 +12,4 @@ Then plot the prices of each commodity over time. See if anything weird shows up
 	- This is a nice building block to do further analysis. Maybe find which has the highest instance of rate of change, or the most stable good over time? These are all just facts, so an interpretation has to come later. But you could rate them on stability and see which goods are stable and which aren't.
 
 
+Ways to analyze the data: standard deviation, and when it move 2 stds out. Rolling averages. Slopes.

@@ -12,6 +12,7 @@ def loc_comm_df(loc, comm, vari=None):
     
     # raw data
     df_raw = pd.read_csv("data_raw/all_commodities.csv")
+    df_raw.fillna(value="normal", inplace=True)
 
     # filter by location
     df = df_raw.loc[df_raw["Location"] == loc]
