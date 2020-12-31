@@ -34,12 +34,13 @@ def loc_comm_df(loc, comm, vari=None):
     return df
 
 
-def miss_years(comm_loc_df):
+def miss_years(df):
     # Returns the missing years in a commodity and location dataframe, or if empty returns str 'none'
     # Assumes years are unique in given df and sorted (ascending)
-    df_f_l = comm_loc_df["Item Year"].iloc[[0,-1]] # first and last year
+    df = df.sort_values(by=["Item Year"])
+    df_f_l = df["Item Year"].iloc[[0,-1]] # first and last year
     year_s = pd.Series(np.arange(df_f_l.iloc[0], df_f_l.iloc[-1]+1)) # full list from first to last year
-    missing = pd.concat([comm_loc_df["Item Year"], year_s]).drop_duplicates(keep=False) # The missing years
+    missing = pd.concat([df["Item Year"], year_s]).drop_duplicates(keep=False) # The missing years
     if missing.empty:
         missing = "none"
     else:
