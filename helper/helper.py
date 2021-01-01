@@ -48,23 +48,24 @@ def miss_years(df):
     return missing
 
 
-def df_plot(df_comm_loc):
+def df_plot(df):
     # Returns a plot of a commodity and location dataframe
+    df = df.sort_values(by=["Item Year"])
 
     # values for plot title and axes
-    commodity = df_comm_loc["Commodity"].unique()
-    location = df_comm_loc["Location"].unique()
-    first_year = df_comm_loc["Item Year"].iloc[0]
-    last_year = df_comm_loc["Item Year"].iloc[-1]
-    measure = df_comm_loc["Standard Measure"].unique()
+    commodity = df["Commodity"].unique()
+    location = df["Location"].unique()
+    first_year = df["Item Year"].iloc[0]
+    last_year = df["Item Year"].iloc[-1]
+    measure = df["Standard Measure"].unique()
 
     # build plot objects
     fig, ax = plt.subplots()
-    ax.plot(df_comm_loc["Item Year"], df_comm_loc["Standard Value"])
+    ax.plot(df["Item Year"], df["Standard Value"])
     ax.set(
         xlabel='year', 
         ylabel=f'price (silver standard / {measure[0]})',
-        title=f'{commodity[0]} Prices in {location[0]} from {first_year} to {last_year}'
+        title=f'{commodity[0]} prices in {location[0]} from {first_year} to {last_year}'
         )
     
     return fig, ax
